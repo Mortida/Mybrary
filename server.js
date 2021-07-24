@@ -3,17 +3,13 @@ if (process.env.NODE_ENV !== 'production') {
 	require('dotenv').config();
 }
 
-// Require express from our express libarary
-const express = require('express');
-// Create our app py calling express() function
-const app = express();
-// Require expressLayouts from our expressLayouts libarary
-const expressLayouts = require('express-ejs-layouts');
-
-const indexRouter = require('./routes/index'); // Require our Router
+const express = require('express');// Import express
+const app = express();// Create app by calling express() fun
+const expressLayouts = require('express-ejs-layouts');// Import expressLayouts
+const indexRouter = require('./routes/index'); // Import Router
 
 // Config our express application
-app.set('view engine', 'ejs'); // Set our view engine | to ejs as our engine
+app.set('view engine', 'ejs'); // Set our view engine to ejs as our engine
 app.set('views', __dirname + '/views'); // Set our views dir
 app.set('layout', 'layouts/layout'); // Hook up Express Layouts
 app.use(expressLayouts); // Tell our Express to use expressLayouts
